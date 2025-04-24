@@ -1,0 +1,84 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="home-container">
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Our Hospital Management System</h1>
+            <p>Providing efficient healthcare solutions with advanced technology.</p>
+            <a href="#" class="btn">Book an Appointment</a>
+        </div>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container text-center my-4">
+        <form method="GET" action="{% url 'home' %}" class="d-flex justify-content-center">
+            <input type="text" name="q" class="form-control w-50" placeholder="Search patients..." value="{{ query }}">
+            <button type="submit" class="btn btn-primary ms-2">Search</button>
+        </form>
+    </div>
+
+    <!-- Display Search Results -->
+    <section class="patient-list">
+        <h3 class="text-center">Patient Records</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Full Name</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>State</th>
+                        <th>Aadhaar Number</th>
+                        <th>Email</th>
+                        <th>Health Problem</th>
+                        <th>Date of Visit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for patient in all_data %}
+                    <tr>
+                        <td>{{ patient.id }}</td>
+                        <td>{{ patient.full_name }}</td>
+                        <td>{{ patient.phone }}</td>
+                        <td>{{ patient.address }}</td>
+                        <td>{{ patient.age }}</td>
+                        <td>{{ patient.gender }}</td>
+                        <td>{{ patient.state }}</td>
+                        <td>{{ patient.aadhaar_number }}</td>
+                        <td>{{ patient.email }}</td>
+                        <td>{{ patient.health_problem }}</td>
+                        <td>{{ patient.date_of_visit }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="11">No records found.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <img src="https://www.pexels.com/photo/doctor-and-nurse-using-tablet-1008650/" alt="Doctors">
+            <h3>Expert Doctors</h3>
+            <p>We have a team of experienced medical professionals ready to serve you.</p>
+        </div>
+        <div class="feature">
+            <img src="https://www.pexels.com/photo/hospital-interior-263337/" alt="Hospital Services">
+            <h3>Advanced Facilities</h3>
+            <p>Equipped with the latest technology for patient care and medical research.</p>
+        </div>
+        <div class="feature">
+            <img src="https://www.pexels.com/photo/medicine-in-blister-pack-593451/" alt="Healthcare">
+            <h3>24/7 Healthcare</h3>
+            <p>Our hospital is open round the clock to ensure your well-being.</p>
+        </div>
+    </section>
+</div>
+{% endblock content %}

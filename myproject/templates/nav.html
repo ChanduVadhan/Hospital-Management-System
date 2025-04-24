@@ -1,0 +1,21 @@
+<div class="navbar">
+
+    {% if request.user.is_authenticated %}
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'patient_registration' %}">Patient Registration</a>
+    <a href="{% url 'patients_record' %}">Patients Record</a>
+    <a href="{% url 'profile' %}">Profile</a>
+   
+    <a href="{% url 'logout_' %}">Logout</a>
+   
+
+    {% else %}
+    <a href="{% url 'login_' %}">Login</a>
+    <a href="{% url 'register' %}">Register</a>
+
+    
+    {% endif %}
+
+
+
+</div>

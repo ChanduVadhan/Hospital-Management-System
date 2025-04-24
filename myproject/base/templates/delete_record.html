@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<div class="container mt-5">
+    <h2 class="text-center text-danger">Delete Patient Record</h2>
+    <p class="text-center">Are you sure you want to delete the record of <strong>{{ patient.full_name }}</strong>?</p>
+
+    <form method="POST" class="text-center">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Yes, Delete</button>
+        <a href="{% url 'patients_record' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+
+{% endblock content %}

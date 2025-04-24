@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center text-primary">Patient Details</h2>
+
+    <div class="details-box mx-auto">
+        <table class="table">
+            <tr><th>ID</th><td>{{ patient.id }}</td></tr>
+            <tr><th>Full Name</th><td>{{ patient.full_name }}</td></tr>
+            <tr><th>Phone</th><td>{{ patient.phone }}</td></tr>
+            <tr><th>Address</th><td>{{ patient.address }}</td></tr>
+            <tr><th>Age</th><td>{{ patient.age }}</td></tr>
+            <tr><th>Gender</th><td>{{ patient.gender }}</td></tr>
+            <tr><th>State</th><td>{{ patient.state }}</td></tr>
+            <tr><th>Aadhaar Number</th><td>{{ patient.aadhaar_number }}</td></tr>
+            <tr><th>Email</th><td>{{ patient.email }}</td></tr>
+            <tr><th>Health Problem</th><td>{{ patient.health_problem }}</td></tr>
+        </table>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="{% url 'patients_record' %}" class="btn btn-secondary">Back</a>
+    </div>
+</div>
+{% endblock content %}
