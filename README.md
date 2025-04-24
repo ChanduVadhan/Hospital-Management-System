@@ -1,4 +1,3 @@
-# Hospital-Management-System
 
 
 # Hospital Management System
@@ -27,8 +26,4 @@ This is a comprehensive **Hospital Management System** built using **Django** an
 - **HTML/CSS/JavaScript** (Frontend)
 - **Bootstrap** (Frontend)
 
-## Installation:
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/ChanduVadhan/Hospital-Management-System.git
